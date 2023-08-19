@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default ServiceCreate = () => {
+export default ServiceEdit = () => {
     const [service, setService] = useState({
         serviceName: '',
         area: '',
@@ -24,7 +24,7 @@ export default ServiceCreate = () => {
 
     return (
         <div>
-            <div><h1>Thêm mới dịch vụ</h1></div>
+            <div><h1>Sửa dịch vụ</h1></div>
         <form onSubmit={handleSubmit}>
             <label htmlFor="serviceName">Tên dịch vụ:</label>
             <input
