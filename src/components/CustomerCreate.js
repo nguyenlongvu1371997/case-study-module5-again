@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default CustomerCreate = () => {
+export default function CustomerCreate() {
     const [customer, setCustomer] = useState({
         name: '',
         dob: '',

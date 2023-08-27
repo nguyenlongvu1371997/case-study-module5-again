@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default ServiceEdit = () => {
+export default function ServiceEdit() {
     const [service, setService] = useState({
         serviceName: '',
         area: '',
@@ -25,64 +25,64 @@ export default ServiceEdit = () => {
     return (
         <div>
             <div><h1>Sửa dịch vụ</h1></div>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="serviceName">Tên dịch vụ:</label>
-            <input
-                type="text"
-                id="serviceName"
-                name="serviceName"
-                value={service.serviceName}
-                onChange={handleChange}
-                required
-            />
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="serviceName">Tên dịch vụ:</label>
+                <input
+                    type="text"
+                    id="serviceName"
+                    name="serviceName"
+                    value={service.serviceName}
+                    onChange={handleChange}
+                    required
+                />
 
-            <label htmlFor="area">Diện tích sử dụng:</label>
-            <input
-                type="text"
-                id="area"
-                name="area"
-                value={service.area}
-                onChange={handleChange}
-                required
-            />
+                <label htmlFor="area">Diện tích sử dụng:</label>
+                <input
+                    type="text"
+                    id="area"
+                    name="area"
+                    value={service.area}
+                    onChange={handleChange}
+                    required
+                />
 
-            <label htmlFor="rentalCost">Chi phí thuê:</label>
-            <input
-                type="text"
-                id="rentalCost"
-                name="rentalCost"
-                value={service.rentalCost}
-                onChange={handleChange}
-                required
-            />
+                <label htmlFor="rentalCost">Chi phí thuê:</label>
+                <input
+                    type="text"
+                    id="rentalCost"
+                    name="rentalCost"
+                    value={service.rentalCost}
+                    onChange={handleChange}
+                    required
+                />
 
-            <label htmlFor="maxCapacity">Số lượng người tối đa:</label>
-            <input
-                type="number"
-                id="maxCapacity"
-                name="maxCapacity"
-                value={service.maxCapacity}
-                onChange={handleChange}
-                required
-            />
+                <label htmlFor="maxCapacity">Số lượng người tối đa:</label>
+                <input
+                    type="number"
+                    id="maxCapacity"
+                    name="maxCapacity"
+                    value={service.maxCapacity}
+                    onChange={handleChange}
+                    required
+                />
 
-            <label htmlFor="rentalType">Kiểu thuê:</label>
-            <select
-                id="rentalType"
-                name="rentalType"
-                value={service.rentalType}
-                onChange={handleChange}
-                required
-            >
-                <option value="">Chọn kiểu thuê</option>
-                <option value="day">Theo ngày</option>
-                <option value="month">Theo tháng</option>
-                <option value="year">Theo năm</option>
-                <option value="hour">Theo giờ</option>
-            </select>
+                <label htmlFor="rentalType">Kiểu thuê:</label>
+                <select
+                    id="rentalType"
+                    name="rentalType"
+                    value={service.rentalType}
+                    onChange={handleChange}
+                    required
+                >
+                    <option value="">Chọn kiểu thuê</option>
+                    <option value="day">Theo ngày</option>
+                    <option value="month">Theo tháng</option>
+                    <option value="year">Theo năm</option>
+                    <option value="hour">Theo giờ</option>
+                </select>
 
-            <button type="submit">Thêm mới</button>
-        </form>
+                <button type="submit">Thêm mới</button>
+            </form>
         </div>
     );
 }

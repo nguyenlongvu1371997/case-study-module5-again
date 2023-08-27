@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default CustomerEdit = () => {
+export default function CustomerEdit() {
     const [customer, setCustomer] = useState({
         name: '',
         dob: '',

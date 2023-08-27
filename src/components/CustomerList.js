@@ -1,4 +1,4 @@
-export default CustomerList = () => {
+export default function CustomerList() {
     <div className="container-lg">
         <table className="table table-bordered">
             <div className="col-sm-8"><h2><b>LIST CUSTOMER</b> </h2></div>
