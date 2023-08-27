@@ -16,6 +16,13 @@ export default function ServiceList() {
     const services = await getServiceList();
     setList(services);
   };
+  const deleteService = async () => {
+
+  }
+
+  const editService = () => {
+
+  }
 
   return (
     <div>
