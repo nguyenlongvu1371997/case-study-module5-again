@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Card, Button, Row, Col } from "react-bootstrap";
-import { getServiceList } from "../service/service";
+import { deleteService, getServiceList } from "../service/service";
 import Navigation from "./Navigation";
 import { alignPropType } from "react-bootstrap/esm/types";
 import { Link } from "react-router-dom";
+
 
 export default function ServiceList() {
   const [list, setList] = useState([]);
@@ -16,8 +17,9 @@ export default function ServiceList() {
     const services = await getServiceList();
     setList(services);
   };
-  const deleteService = async () => {
-
+  const deleteSer = async (id) => {
+    await deleteService(id);
+    getAll();
   }
 
   const editService = () => {
@@ -42,7 +44,7 @@ export default function ServiceList() {
                 <Card.Text>{e.text}</Card.Text>
                 <Card.Text className="font-weight-bold">{e.service}</Card.Text>
                 <Button variant="outline-secondary">Edit</Button>
-                <Button>Delete</Button>
+                <Button onClick={() => deleteSer(e.id)}>Delete</Button>
               </Card.Body>
             </Card>
           </Col>

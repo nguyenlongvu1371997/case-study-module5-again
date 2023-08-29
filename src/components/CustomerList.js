@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import { getCustomerList } from "../service/service";
 import Navigation from "./Navigation";
+import { useNavigate } from "react-router-dom";
 
 export default function CustomerList() {
+    const navigate = useNavigate();
     const [list, setList] = useState([]);
     useEffect(() => {
         getAll();
@@ -16,19 +18,21 @@ export default function CustomerList() {
 
     }
 
-    const editCustomer = () => {
-
+    const editCustomer = (id) => {
+        navigate('/customer/edit/', id)
     }
 
     return (
         <>
             <Navigation />
             <div className="container-lg">
+                <h2><b>LIST CUSTOMER</b> </h2>
+                <div className="col-sm-4">
+                    <button>Add customer</button>
+                </div>
                 <table className="table table-bordered">
-                    <div className="col-sm-8"><h2><b>LIST CUSTOMER</b> </h2></div>
-                    <div className="col-sm-4">
-                        <button>Add customer</button>
-                    </div>
+                    <div className="col-sm-8"></div>
+
                     <thead>
                         <tr>
                             <td>STT</td>
